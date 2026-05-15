@@ -9,7 +9,7 @@
 from datetime import datetime, timedelta, timezone
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-from fastapi import Requests, HTTPException, status
+from fastapi import Request, HTTPException, status
 from dotenv import load_dotenv
 import os
 
@@ -46,7 +46,7 @@ def decodificar_token(token: str):
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload
 
-def get_usuario_logado(request: Requests):
+def get_usuario_logado(request: Request):
     token = request.cookies.get("access_token")
 
     if not token:
