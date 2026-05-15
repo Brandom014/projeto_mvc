@@ -3,6 +3,8 @@ from sqlalchemy.sql import func
 from app.database import Base
 
 class Usuario(Base):
+    __tablename__ = "usuarios"
+
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String(100), nullable=False)
     email = Column(String(150), unique=True, nullable=False)
