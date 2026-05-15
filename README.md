@@ -1,0 +1,16 @@
+# Instalar as bibliotecas
+
+
+no terminal: 
+```bash
+pip install -r requirements.txt
+```
+
+# Inicializar o alembic
+
+```bash
+python -m alembic init migrations
+```
+
+# Editar o arquivo alembic init - na linha 89:
+sqalchemy.url =
