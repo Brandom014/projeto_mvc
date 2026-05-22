@@ -9,7 +9,16 @@
     <h1>
         Faça login
     </h1>
-    <form action="auth/login" method="post">
+
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+
+    {% if request.query_params.get("cadastro") == "ok" %}
+        <p style="color: green;">Cadastro realizado com sucesso! faça login.</p>
+    {% endif %}
+
+    <form action="/auth/login" method="post">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
 
